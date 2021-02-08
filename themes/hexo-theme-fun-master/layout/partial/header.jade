@@ -1,0 +1,15 @@
+header#header.header-navigation
+    nav
+        .logo
+            a(href=getConfig("url"))!= getConfig("title")
+        h2#mnavh
+            span.navicon
+        ul#starlist
+            each m in theme.menu
+                li
+                   a(href=url_for(m.url)) !{m.title}
+        .searchbox
+            #search_bar.search_bar
+                input#keyboard.input(placeholder='想搜点什么呢..', type='text', name='keyboard' autocomplete="off")
+                p.search_ico
+                    span

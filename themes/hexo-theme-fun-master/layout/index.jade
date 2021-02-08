@@ -1,0 +1,40 @@
+extends partial/layout
+
+block styles
+    != css('css/index.css?v='+date(Date.now(), 'YYYYMMDDHHmm'))
+
+block container
+    main
+        div.blogtab
+            each item in page.posts.data
+                .blogs(data-scroll-reveal="enter bottom over 1s")
+                    h3.blogtitle
+                        a(href=url_for(item.path), target='_blank')= item.title
+                    span.blogpic
+                        a(href=url_for(item.path), title=item.title)
+                            img(src=url_for(item.cover_picture), alt='')
+                    p.blogtext!= item.excerpt || truncate(strip_html(item.content), {length: 120})
+                    .bloginfo
+                        ul
+                            li.author
+                                a(href='/')!= item.author || getConfig('author')
+                            li.lmname
+                                a(href=url_for(getValue(item, "categories.data.0.path")))!= getValue(item, "categories.data.0.name")
+                            li.timer!= date(item.date, 'YYYY-MM-DD HH:mm:ss')
+                            //li.view
+                            //    span 34567
+                            //    | 已阅读
+                            //li.like 9999
+        .pagelist
+            !=paginator({prev_text:"<i class='iconfont icon-page-pre' ></i>",next_text:"<i class='iconfont icon-page-next' ></i>",escape: false})
+    aside.r_box
+        include mixins/right
+        +card()
+        +category()
+        +recommend()
+        +tags()
+        +wechat()
+block scripts
+    include mixins/scripts
+    +canvas()
+    != js('js/common.js?v='+date(Date.now(), 'YYYYMMDDHHmm'), 'js/index.js?v='+date(Date.now(), 'YYYYMMDDHHmm'))

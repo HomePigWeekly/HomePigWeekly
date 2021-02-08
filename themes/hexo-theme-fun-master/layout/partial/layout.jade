@@ -1,0 +1,18 @@
+doctype html
+html(lang=config.language)
+    head
+        include head
+        <!--[if lt IE 9]>
+        != js('js/modernizr.js')
+        <![endif]-->
+        != css('css/iconfont')
+        block styles
+    body
+        include header
+        article
+            block container
+        include footer
+        .cd-top
+            i.iconfont.icon-top
+        != js("js/jquery.min.js",'js/scrollreveal.js','js/hc-sticky.js')
+        block scripts

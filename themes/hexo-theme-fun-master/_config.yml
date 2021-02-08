@@ -1,0 +1,29 @@
+
+menu:
+  - title: 首页
+    url: /
+
+
+favicon: /images/favicon.png
+
+recommend:
+  size: 8
+
+prefile:
+  excerpt: 
+  wechat: 
+copyright: |
+  《家猪周刊》编辑部
+comment:
+  gitalk:
+    enable: false
+    owner: you github repository owner
+    repo: you github repository
+    clientID: you github Client ID
+    clientSecret: you github Client Secret
+  gitment:
+    enable: false
+    owner: you github repository owner
+    repo: you github repository
+    clientID: you github Client ID
+    clientSecret: you github Client Secret

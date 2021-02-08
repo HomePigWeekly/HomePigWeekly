@@ -1,0 +1,24 @@
+footer
+    - var footer = getValue(site,"data.footer",[]);
+    if footer.length > 0
+        section.footer_top
+            .footer_container
+                each item in footer
+                    .footer_con_warp(style=item.style)
+                        h3.item_title!= item.title
+                        div.item_content
+                            -if(item.content)
+                                !=item.content
+                            -else if(item.items)
+                                ul.list
+                                    each i in item.items
+                                        li.list_item
+                                            a(href=i.link)!=i.title
+    section.footer_bottom
+        .footer_container
+            p.copyright!=getConfig("copyright")
+            ul.social_network
+                each item in getValue(site,"data.contact",[])
+                    li.social_network_item
+                        a(href=item.link)
+                            i.iconfont(class=item.icon)
