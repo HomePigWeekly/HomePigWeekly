@@ -2,7 +2,7 @@
 
 ## 快速开始
 
-<p>第<input type="text" id="goto" style="text-align: center;width: 50px;" />期 <button OnClick="location.assign(document.getElementById('goto')+'.html')">开始</button></p>
+<p>第<input type="text" id="goto" style="text-align: center;width: 50px;" />期 <button OnClick="location.assign(document.getElementById('goto').value+'.html')">开始</button></p>
 
 ## 新版
 
