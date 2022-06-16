@@ -2,7 +2,10 @@
 
 ## 快速开始
 
-<p>第<input type="text" id="goto" style="text-align: center;width: 50px;" />期 <button OnClick="location.assign(document.getElementById('goto').value+'.html')">开始</button></p>
+<form action="GoTo.html">
+    第<input type="text" name="goto" id="goto" style="text-align: center;width: 50px;" />期
+    <button type="submit" style="white-space: nowarp;">开始</button>
+</form>
 
 ## 新版
 
