@@ -6,6 +6,8 @@
 
 [全部](HPW/)
 
+本刊的更新频率不是固定的
+
 ## 联系我们
 
 <hpw@homepigweekly.cn>
